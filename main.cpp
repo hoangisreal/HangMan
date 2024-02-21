@@ -11,12 +11,23 @@ int main()
 {
     // Lời chào
     greet();  
+    // Mở file txt
+    ifstream infile("data.txt");
 
-    vector<string> words = {"balloon", "hair", "computer", "orange", "clock", "mailman", "lemon", "spine", "sunlight", "fang"};
+    // Tạo vector lưu trữ các từ
+    vector<string> words;
+    string word;
+
+    // Đọc từng từ trong file và thêm vào vector
+    while (infile >> word) {
+        words.push_back(word);
+    }
+    infile.close();
 
     // Tạo random number generator
     srand(time(0));
     int index = rand() % 10;
+
     // Chọn từ ngẫu nhiên
     string codeword = words[index];
     // Chuyển đổi ký tự sang dạng '_'
