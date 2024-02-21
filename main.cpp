@@ -2,7 +2,8 @@
 #include "hangman_func.h"
 #include <vector>
 #include <fstream>
-#include <random>
+#include <stdlib.h>
+#include <time.h>
 #include <string>
 using namespace std;
 
@@ -11,28 +12,15 @@ int main()
     // Lời chào
     greet();  
 
-    // Mở file txt và lấy ngẫu nhiên một từ
-    ifstream infile("data.txt");
-    // Tạo vector lưu trữ các từ
-    vector<string> words;
-    string word;
-    // Đọc từng từ trong file và thêm vào vector
-    while (infile >> word) {
-        words.push_back(word);
-    }
-    infile.close();
+    vector<string> words = {"balloon", "hair", "computer", "orange", "clock", "mailman", "lemon", "spine", "sunlight", "fang"};
 
     // Tạo random number generator
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dist(0, words.size() - 1);
-    // Lấy vị trí ngẫu nhiên trong vector
-    int index = dist(gen);
-
+    srand(time(0));
+    int index = rand() % 10;
     // Chọn từ ngẫu nhiên
     string codeword = words[index];
     // Chuyển đổi ký tự sang dạng '_'
-    string answer;
+    string answer = codeword;
     for (int i = 0; i < codeword.size(); ++i) {
         answer[i] = '_';
     }
@@ -43,7 +31,7 @@ int main()
     char letter;
 
     // Logic trò chơi
-    while(answer!=codeword && misses < 6)
+    while(answer!=codeword && misses < 7)
     {
         display_misses(misses);
         display_status(incorrect, answer);
