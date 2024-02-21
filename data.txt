@@ -5,6 +5,6 @@ orange
 clock
 mailman
 lemon
-spine
-goblin
-fang
+star
+bridge
+rainbow
