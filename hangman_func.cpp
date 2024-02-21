@@ -76,7 +76,7 @@ void display_misses(int misses)
   else if(misses==6)
   {
     cout<<"  +---+ \n";
-    cout<<"      | \n";
+    cout<<"  |   | \n";
     cout<<"  O   | \n";
     cout<<" /|\\  | \n";
     cout<<" / \\  | \n";
