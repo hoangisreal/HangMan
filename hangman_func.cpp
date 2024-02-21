@@ -83,5 +83,33 @@ void display_misses(int misses)
     cout<<"      | \n";
     cout<<" ========= \n";
   }
+}
+void display_status(vector<char> incorrect, string answer)
+{
+  cout<<"Cac chu da doan sai: \n";
 
+  for(int i = 0; i<incorrect.size(); i++)
+  {
+    cout<<incorrect[i]<<" ";
+  }
+
+  cout<<"\nword:\n";
+
+  for(int i = 0; i<answer.length(); i++)
+  {
+    cout<<answer[i]<<" ";
+  }
+}
+
+
+void end_game(string answer, string codeword)
+{
+  if(answer==codeword)
+  {
+    cout<<"Chuc mung ban da chien thang\n";
+  }
+  else
+  {
+    cout<<"Ban da thua\n";
+  }
 }
