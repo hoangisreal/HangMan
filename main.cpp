@@ -8,9 +8,7 @@
 using namespace std;
 
 int main()
-{
-    // Lời chào
-    greet();  
+{ 
     // Mở file txt
     ifstream infile("data.txt");
 
@@ -26,7 +24,7 @@ int main()
 
     // Tạo random number generator
     srand(time(0));
-    int index = rand() % 10;
+    int index = rand() % words.size();
 
     // Chọn từ ngẫu nhiên
     string codeword = words[index];
@@ -42,8 +40,10 @@ int main()
     char letter;
 
     // Logic trò chơi
-    while(answer!=codeword && misses < 7)
-    {
+    
+    do{
+        system("cls");
+        greet();
         display_misses(misses);
         display_status(incorrect, answer);
 
@@ -58,19 +58,15 @@ int main()
             guess = true;
         }
         }
-        if(guess)
+        if(guess==false)
         {
-        cout<<"\nDung roi\n";
-        }
-        else
-        {
-        cout<<"\nSai roi, ban da mat mot luot.\n";
         incorrect.push_back(letter);
         misses++;
         }
         guess = false;
-    }
-
+    }while(answer!=codeword && misses < 7);
+    system("cls");
+    display_misses(misses);
     end_game(answer, codeword);
     return 0;
 }

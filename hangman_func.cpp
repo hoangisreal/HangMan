@@ -26,8 +26,8 @@ void display_misses(int misses)
   else if(misses==1)
   {
     cout<<"  +---+ \n";
+    cout<<"  |   | \n";
     cout<<"      | \n";
-    cout<<"  O   | \n";
     cout<<"      | \n";
     cout<<"      | \n";
     cout<<"      | \n";
@@ -36,9 +36,9 @@ void display_misses(int misses)
   else if(misses==2)
   {
     cout<<"  +---+ \n";
-    cout<<"      | \n";
-    cout<<"  O   | \n";
     cout<<"  |   | \n";
+    cout<<"  O   | \n";
+    cout<<"      | \n";
     cout<<"      | \n";
     cout<<"      | \n";
     cout<<" ========= \n";
@@ -46,9 +46,9 @@ void display_misses(int misses)
   else if(misses==3)
   {
     cout<<"  +---+ \n";
-    cout<<"      | \n";
+    cout<<"  |   | \n";
     cout<<"  O   | \n";
-    cout<<" /|   | \n";
+    cout<<"  |   | \n";
     cout<<"      | \n";
     cout<<"      | \n";
     cout<<" ========= \n";
@@ -56,9 +56,9 @@ void display_misses(int misses)
   else if(misses==4)
   {
     cout<<"  +---+ \n";
-    cout<<"      | \n";
+    cout<<"  |   | \n";
     cout<<"  O   | \n";
-    cout<<" /|\\  | \n";
+    cout<<" /|   | \n";
     cout<<"      | \n";
     cout<<"      | \n";
     cout<<" ========= \n";
@@ -66,14 +66,24 @@ void display_misses(int misses)
   else if(misses==5)
   {
     cout<<"  +---+ \n";
+    cout<<"  |   | \n";
+    cout<<"  O   | \n";
+    cout<<" /|\\  | \n";
     cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<" ========= \n";
+  }
+  else if(misses==6)
+  {
+    cout<<"  +---+ \n";
+    cout<<"  |   | \n";
     cout<<"  O   | \n";
     cout<<" /|\\  | \n";
     cout<<" /    | \n";
     cout<<"      | \n";
     cout<<" ========= \n";
   }
-  else if(misses==6)
+  else if(misses==7)
   {
     cout<<"  +---+ \n";
     cout<<"  |   | \n";
@@ -106,12 +116,20 @@ void end_game(string answer, string codeword)
 {
   if(answer==codeword)
   {
+    cout<<"============================\n";
     cout<<"Chuc mung ban da chien thang\n";
-    cout<<codeword;
+    cout<<"============================\n\n";
+    cout<<"============================\n";
+    cout<<"Tu dung: "<<codeword<<endl;
+    cout<<"============================\n";
   }
   else
   {
+    cout<<"============================\n";
     cout<<"Ban da thua\n";
-    cout<<codeword;
+    cout<<"============================\n\n";
+    cout<<"============================\n";
+    cout<<"Tu dung: "<<codeword<<endl;
+    cout<<"============================\n";
   }
 }

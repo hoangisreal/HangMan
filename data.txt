@@ -8,3 +8,10 @@ lemon
 star
 bridge
 rainbow
+ball
+bread
+heart
+circle
+butterfly
+worm
+candle
